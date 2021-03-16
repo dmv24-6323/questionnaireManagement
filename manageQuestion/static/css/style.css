@@ -1,0 +1,6 @@
+/* Form validation */
+form .error {
+    color: red;
+    font-size: smaller;
+    width: 100%;
+}

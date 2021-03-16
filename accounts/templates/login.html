@@ -1,0 +1,43 @@
+{% extends 'siteBase.html' %}
+{% load static %}
+{% block title %}
+Login
+{% endblock %}
+{% block linkcss %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock %}
+{% block linkjs %}
+<script src="{% static 'js/login.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/additional-methods.min.js' %}"></script>
+{% endblock %}
+{% block content %}
+
+<body>
+<form autocomplete="off" action="login" id="loginform" method="post">
+    {% csrf_token %}
+    <div class="imgcontainer">
+        <img src="{% static 'images/todologo.png' %}" alt="Avatar" class="avatar">
+    </div>
+    {% if messages %}
+    <div class="container col-md-2 messages">
+        {% for message in messages %}
+        {% if message.tags %}
+        <h3 id="{{ message.tags }}" class="{{ message.tags }}">{{ message }}</h3>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="container col-md-5">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+        <br>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <button type="submit">Login</button>
+    </div>
+</form>
+</body>
+{% endblock %}
