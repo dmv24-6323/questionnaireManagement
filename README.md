@@ -17,7 +17,6 @@ The maximum count of questions in each questionnaire list is 10. ( Admin and med
 
 # Technology used
 
-Front end - HTML, CSS, Bootstrap, JavaScript
-Server side - Python Django
-Database - MySQL
-
+1. Front end - HTML, CSS, Bootstrap, JavaScript
+2. Server side - Python Django
+3. Database - MySQL
